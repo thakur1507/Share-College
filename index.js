@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const mongoDBstore = require("connect-mongodb-session")(session);
 const { flash } = require('express-flash-message');
 const csrf = require("csurf");
-const Post = require("C:/Users/ashwini/Desktop/college_blog/model/post.js");
+const Post = require("./model/post.js");
 
 
 const registerRoutes = require('./routes/register');
