@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>share with</title>
+    <link rel="stylesheet" href="/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('partials/head'); %>
+    
+    <div class="jumbotron  bg-light">
+        <div class="container1">
+            <h1 class="display-3">Share with</h1>
+            <p>share your experience with your college</p>
+            <p><a class="btn btn-primary btn-lg" href="/signup" role="button">signup »</a></p>
+        </div>
+        <hr>
+    </div>
+
+
+    <div class="container4-fluid">
+       
+            <!-- Example row of columns -->
+            <div class="row">
+               <% for(let i = blogs.length-1;i>=blogs.length-2;i--){ %>
+                <div class="col-md-4 bg-light" style="height:auto">
+                    <h2><%=blogs[i].title%></h2>
+                    <p><%=blogs[i].content%> </p>
+                    <p><a class="btn btn-secondary" href="/singleBlog/<%=blogs[i]._id%>" role="button" style="background-color: blue">Read More »</a></p>
+                </div>
+                <% } %>
+
+                <% for(let i = notices.length-1;i>=notices.length-2 && i>=0;i--){ %>
+                <div class="col-md-4 bg-light" style="height:auto">
+                    <h2><%=notices[i].title%></h2>
+                    <p><%=notices[i].content%> </p>
+                    <p><a class="btn btn-secondary" href="/singleBlog/<%=notices[i]._id%>" role="button" style="background-color: blue">Read More »</a></p>
+                </div>
+                <% } %>
+            </div>
+
+    </div>
+    
+    <div>
+        <span class="divider"></span>
+    </div>
+
+    <div class ="container3">
+        <h2>About Us</h2>
+        <p>Email: admin@sharewith.com</p>
+        <p>contact No: (+91)933-6842-211</p>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+</html>

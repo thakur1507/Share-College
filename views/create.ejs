@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="/create.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+   
+    <%- include('partials/head'); %>
+    <div class="post" style="margin-top:5px;">
+        <div class="form">
+            <div class="container-fluid">
+                <h2 style="text-align: center;padding-top:2%;"> Create Post</h2>
+            </div>
+            <form action="/create" method="POST">
+                <label for="title" >Title</label>
+                <input type="text" name="title" class="form-control form-control" id="title">
+
+                <div class="form-group">
+                    <label for="cat" >Category:</label>
+                    <select class="form-control" id="cat" name="category">
+                        <option>Blog</option>
+                        <option>Notice</option>
+                    </select>
+                </div>
+
+                <label for="content" >Share Your Thoughts</label>
+                <br>
+                <input type="textarea" name="content" id="content" >
+                <br>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button type="submit" class="btn btn-primary" style="margin-left:25rem;">post</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <span class="divider"></span>
+    </div>
+
+    <div class="container3" style="text-align:center;">
+        <h2>About Us</h2>
+        <p>Email: admin@sharewith.com</p>
+        <p>contact No: (+91)933-6842-211</p>
+    </div>
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+</html>

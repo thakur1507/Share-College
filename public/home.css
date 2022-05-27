@@ -1,0 +1,40 @@
+.container1{
+    padding-top: 5%;
+    text-align: center;
+    text-decoration-color: white;
+    text-decoration: solid;
+}
+.container3{
+    text-align: center;
+}
+.container4-fluid{
+    width:100%;
+    height:auto;
+    align-items: center;
+    display: flex;
+    background:url("signup.jpg");
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    margin-top:5px;
+}
+.col-md-4{
+    margin: 30px;
+    padding:10px;
+    border-radius: 30px;
+    width: fit-content;
+    box-shadow: 1rem 1rem;
+    height: fit-content;
+}
+.row{
+    padding-left: 25%;
+}
+.divider {
+    text-align: center;
+    width: 100%;
+    height: 3px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+}
