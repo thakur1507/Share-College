@@ -12,7 +12,7 @@ exports.logoutcontroller = async (req,res) =>{
 
 exports.postsigup = async (req,res) =>{
     let fullname = req.body.fname +' '+ req.body.lname , email = req.body.email , password = req.body.password;
-    console.log(fullname,password,email);
+    //console.log(fullname,password,email);
     
     let check = User.findOne({email});
 
@@ -25,7 +25,7 @@ exports.postsigup = async (req,res) =>{
     let username = email.split("@")[0];
 
     let hashedpassword = await bcrypt.hash(password, 12);
-    console.log(hashedpassword);
+   // console.log(hashedpassword);
 try{
     const user = await User.create({
         name : fullname,
@@ -40,7 +40,7 @@ try{
     req.session.isloggedIn =true;
     req.session.user = user;
 }catch (err){
-    console.log(err);
+    res.render("error.ejs");
 }
     res.redirect("/");
 };
@@ -70,7 +70,7 @@ exports.postlogin = async (req,res) =>{
     }
   } catch(err)
      {
-         console.log(err);
+         res.render("error.ejs");
      }
 };
 

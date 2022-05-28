@@ -10,9 +10,9 @@ try{
     const type = req.body.catergory;
     const author = req.body.username;
     const title = req.body.title;
-    console.log(type,title);
-    if(author=='')
-    console.log("author");
+    //console.log(type,title);
+    //if(author=='')
+    //console.log("author");
 
     let Post;
     if(type!='both' && author!='' && title!=''){
@@ -46,12 +46,12 @@ try{
         Post = await post.find({});
     }
     
-    console.log(Post);
+    //console.log(Post);
 
    res.render("searchresult.ejs",{blogs:Post});
    //res.send("hii");
 } catch(err)
 {
-    console.log(err);
+    res.render("error.ejs");
 }
 };

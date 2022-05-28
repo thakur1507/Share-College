@@ -3,15 +3,15 @@ const Post = require("../model/post");
 exports.profile = async (req,res) =>{
 
     const { username ,name ,email } = req.session.user;
-    console.log(name);
+    //console.log(name);
     try{
     let blogs = await Post.find({username,type:"Blog"});
-    console.log(blogs);
+    //console.log(blogs);
     let notices = await Post.find({username,type:"Notice"});
-    console.log(notices);
+    //console.log(notices);
     res.render("profile.ejs",{blogs,notices,username,name,email});
     } catch{
-        console.log(err);
+        res.render("error.ejs");
     };
     
 };

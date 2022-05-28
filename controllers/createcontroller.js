@@ -24,7 +24,7 @@ exports.createPost = async (req, res) => {
             hashtags:hashtag,
         });
 
-        console.log(post);
+        //console.log(post);
         
        if(req.body.category =="Blog")
          res.redirect("/blog");
@@ -32,6 +32,6 @@ exports.createPost = async (req, res) => {
           res.redirect("/notice"); 
 
     }catch (err){
-        console.log(err);
+        res.render("error.ejs");
     }
 };

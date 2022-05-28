@@ -61,15 +61,15 @@ app.get("/", async(req,res) =>{
 res.render("home.ejs",{blogs,notices});
     } catch(err)
     {
-        console.log(err);
+       res.render("error.ejs");
     }
 });
 
 
 app.listen(3000, () =>{
-    console.log("Listening at 3000")
+   // console.log("Listening at 3000")
 });
 
 mongoose.connect(mongoDB_URI, () => {
-    console.log("connected to db");
+   // console.log("connected to db");
 });

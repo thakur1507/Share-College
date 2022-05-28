@@ -17,7 +17,7 @@ exports.getUpvote = async (req,res) =>{
                 newupvote.push(id);
             }     
         });
-        console.log(newupvote);
+        //console.log(newupvote);
         if(blog.upvote.length == newupvote.length)
         {
             blog.upvote.push(userid.toString());
@@ -26,13 +26,13 @@ exports.getUpvote = async (req,res) =>{
             blog.upvote = newupvote;
         }
        const updatedblog = await blog.save();
-        console.log(updatedblog);
+        //console.log(updatedblog);
         let data = await JSON.stringify({upvote:blog.upvote.length-1});
         res.send(data);
         
         //let data = JSON.stringify({upvote: updatedblog.upvote})
      } catch (err){
-         console.log(err);
+        res.render("error.ejs");
      }
 };
 
@@ -65,7 +65,7 @@ exports.getsingleBlog = async (req, res) => {
        
         res.render("singleBlog.ejs", {blog:blog});
     } catch (err) {
-        console.log(err);
+        res.render("error.ejs");
     }
 };
 
@@ -79,7 +79,7 @@ exports.getAllblogs = async (req, res) => {
         res.render("blog.ejs", { blogs });
 
     } catch (err) {
-        console.log(err);
+        res.render("error.ejs");
     }
 };
 
@@ -88,6 +88,6 @@ exports.getAllnotices = async (req, res) => {
         const notices = await post.find({ type: "Notice" });
         res.render("notice.ejs", { notices });
     } catch (err) {
-        console.log(err);
+        res.render("error.ejs");
     }
 };
