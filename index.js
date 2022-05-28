@@ -8,7 +8,7 @@ const mongoDBstore = require("connect-mongodb-session")(session);
 const { flash } = require('express-flash-message');
 const csrf = require("csurf");
 const Post = require("./model/post.js");
-
+const PORT = process.env.PORT|| 3000;
 
 const registerRoutes = require('./routes/register');
 const postRoutes = require('./routes/post');
@@ -66,10 +66,10 @@ res.render("home.ejs",{blogs,notices});
 });
 
 
-app.listen(3000, () =>{
-   // console.log("Listening at 3000")
+app.listen(PORT, () =>{
+    console.log("Listening at 3000")
 });
 
 mongoose.connect(mongoDB_URI, () => {
-   // console.log("connected to db");
+    console.log("connected to db");
 });
