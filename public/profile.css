@@ -3,7 +3,7 @@
     height:auto;
     align-items: center;
     display: flex;
-    background:url("signup.jpg");
+    /* background:url("signup.jpg"); */
     overflow: hidden;
     padding-top:30px;
     padding-bottom: 20px;
@@ -19,11 +19,12 @@
     margin-left: 30px;
 }
 .blog{
-    background: url("signup.jpg");
+    /* background: url("signup.jpg"); */
     padding-top:2.5%;
     padding-bottom:2.5%;
     border-radius: 40px;
     margin-top:5px;
+    
 }
 .card{
     margin-top:2.5%;
@@ -41,4 +42,8 @@
     border-radius: 50%;
     background-color: black;
     display: inline-block;
+}
+.card-header {
+    color: chocolate;
+    font-weight: 300;
 }

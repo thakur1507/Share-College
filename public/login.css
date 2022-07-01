@@ -4,8 +4,9 @@
     padding-top:5%;
     margin-top:5px;
     padding-bottom: 5%;
-    background: url("./signup.jpg");
+    /* background: url("./signup.jpg"); */
     border-radius:40px;
+    font-weight: 500;
 }
 .card{
     

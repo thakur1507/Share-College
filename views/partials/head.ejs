@@ -1,57 +1,90 @@
+<head>
+    <style>
+        .navbar {
+            height: 80px;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
 
-<div class="navigation">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Share with</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <% if(isloggedIn){ %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/create">create</a>
-                    </li>
-                    <% } %>
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 35px;
+        }
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/notice">notice</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">blog</a>
-                    </li>
-                    
-                    <% if(isloggedIn){ %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/logout">logout <%= username %> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile">profile</a>
-                        </li>
-                        <% } else{ %>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/" id="navbarScrollingDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            login/signup
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="/login">login</a></li>
-                            <li><a class="dropdown-item" href="/signup">signup</a></li>
-                        </ul>
-                    </li>
-                    <% }%>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/search">search</a>
-                    </li>
-                    
-                </ul>
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        .right{
+            float: right;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="http://www.designbolts.com/wp-content/uploads/2016/04/S-letter-Logo-Design.jpg" alt="" height="60px"  style="border-radius: 50%;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse bg-info" id="navbarScroll">
+                    <ul class="navbar-nav navbar-nav-scroll " style="--bs-scroll-height: 120px;">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li> -->
+                        <% if(isloggedIn){ %>
+                            <li class="nav-item">
+                                <h5><a class="nav-link" href="/create">Create</a></h5>
+                            </li>
+                            <% } %>
+
+                                <li class="nav-item">
+                                    <h5><a class="nav-link" href="/notice">Notice</a></h5>
+                                </li>
+                                <li class="nav-item">
+                                    <h5><a class="nav-link" href="/blog">Blog</a></h5>
+                                </li>
+
+                                <% if(isloggedIn){ %>
+                                    <li class="nav-item ">
+                                        <h5><a class="nav-link" href="/logout">Logout <%= username %> </a></h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5><a class="nav-link" href="/profile">Profile</a></h5>
+                                    </li>
+                                    <% } else{ %>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="/" id="navbarScrollingDropdown"
+                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Login/Signup
+                                            </a>
+                                            <ul class="dropdown-menu bg-info" aria-labelledby="navbarScrollingDropdown">
+                                                <h5><li><a class="dropdown-item" href="/login">Login</a></li></h5>
+                                                <h5><li><a class="dropdown-item" href="/signup">Signup</a></li></h5>
+                                            </ul>
+                                        </li>
+                                        <% }%>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/search">Search</a>
+                                            </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</div>
+        </nav>
+    </div>
 
 </body>

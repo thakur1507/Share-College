@@ -1,11 +1,13 @@
 .container1{
-    background: url("./signup.jpg");
+    /* background: url("./signup.jpg"); */
     padding-top:6%;
     padding-bottom: 6%;
     text-align: center;
     text-decoration: aliceblue;
     border-radius:50px;
     margin-top:5px;
+    font-weight: 500;
+    color: black;
 }
 #search{
     align-items: center;
@@ -21,4 +23,17 @@
     border-radius: 50%;
     background-color: black;
     display: inline-block;
+}
+.form{
+    background-color: white;
+    height: 300px;
+    margin-top: 15px;
+    margin-left:30%;
+    margin-right:30%;
+    border-radius: 60px;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+    box-shadow: 1rem 1rem;
+    font-weight: 500;
 }

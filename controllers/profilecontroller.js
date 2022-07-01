@@ -5,9 +5,9 @@ exports.profile = async (req,res) =>{
     const { username ,name ,email } = req.session.user;
     //console.log(name);
     try{
-    let blogs = await Post.find({username,type:"Blog"});
+    let blogs = await Post.find({author: username,type:"Blog"});
     //console.log(blogs);
-    let notices = await Post.find({username,type:"Notice"});
+    let notices = await Post.find({author: username,type:"Notice"});
     //console.log(notices);
     res.render("profile.ejs",{blogs,notices,username,name,email});
     } catch{

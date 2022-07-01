@@ -1,18 +1,16 @@
 const Post = require("../model/post");
 
 exports.getPostInput =(req,res) =>{
-    res.render("create.ejs");
+    const user = req.session.user;
+    res.render("create.ejs", {user: user});
 };
 
 exports.createPost = async (req, res) => {  
-    
     
     try{
         
         let words = req.body.content.split(" ");
         let hashtag =words.filter(st => st.startsWith( "#"));
-         
-        
         const post = await Post.create({
             title: req.body.title,
             content: req.body.content,

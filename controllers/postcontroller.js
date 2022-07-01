@@ -1,5 +1,5 @@
 
-const { findByIdAndUpdate, findById } = require("../model/post");
+// const { findByIdAndUpdate, findById } = require("../model/post");
 const post = require("../model/post");
 
 exports.getUpvote = async (req,res) =>{

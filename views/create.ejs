@@ -20,25 +20,38 @@
             <div class="container-fluid">
                 <h2 style="text-align: center;padding-top:2%;"> Create Post</h2>
             </div>
-            <form action="/create" method="POST">
-                <label for="title" >Title</label>
-                <input type="text" name="title" class="form-control form-control" id="title">
+            <div class="row">
+                <form action="/create" method="POST">
+                    <div class="form-group">
+                        <label for="title" >Title</label>
+                    <input type="text" name="title" class="form-control form-control" id="title">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="cat" >Category:</label>
+                        <select class="form-control" id="cat" name="category">
+                            <option>Blog</option>
+                            <% if(user.admin==true) { %>
+                            <option>Notice</option>
+                            <% } %>
+                        </select>
+                    </div>
+    
+                    
+                    <!-- <input type="textarea" name="content" id="content" > -->
+                    <div class="form-group shadow-textarea">
+                        <label for="exampleFormControlTextarea6">Share Your Thoughts</label>
+                        <textarea class="form-control z-depth-1" name="content" id="content" rows="3" placeholder="Write something here..."></textarea>
+                      </div>
+                    
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn" style="background-color: rgba(255, 0, 55, 0.966)" >post</button>
+                    </div>
+                    
+                </form>
 
-                <div class="form-group">
-                    <label for="cat" >Category:</label>
-                    <select class="form-control" id="cat" name="category">
-                        <option>Blog</option>
-                        <option>Notice</option>
-                    </select>
-                </div>
-
-                <label for="content" >Share Your Thoughts</label>
-                <br>
-                <input type="textarea" name="content" id="content" >
-                <br>
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                <button type="submit" class="btn btn-primary" style="margin-left:25rem;">post</button>
-            </form>
+            </div>
         </div>
     </div>
 

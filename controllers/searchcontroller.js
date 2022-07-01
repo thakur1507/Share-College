@@ -13,6 +13,8 @@ try{
     //console.log(type,title);
     //if(author=='')
     //console.log("author");
+    if(!type || !author || !title)
+    res.render("search.ejs");
 
     let Post;
     if(type!='both' && author!='' && title!=''){
@@ -47,8 +49,10 @@ try{
     }
     
     //console.log(Post);
-
+  
    res.render("searchresult.ejs",{blogs:Post});
+  
+   
    //res.send("hii");
 } catch(err)
 {

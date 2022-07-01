@@ -4,7 +4,7 @@ const { getsearchcontroller, getsearchresults } = require("../controllers/search
 const { isauth } = require("../middleware/auth");
 const router = express.Router();
 
-router.get("/search",getsearchcontroller);
-router.post("/search/result",isauth, getsearchresults);
+router.get("/search",isauth, getsearchcontroller);
+router.post("/search",isauth, getsearchresults);
 
 module.exports =router;
